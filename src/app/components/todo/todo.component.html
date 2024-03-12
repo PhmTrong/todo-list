@@ -1,0 +1,17 @@
+<div class="card shadow mb-4 bg-white mt-5">
+  <div class="card-header text-center">
+<span class="fancy">TodoList</span>
+  </div>
+  <div class="card-body">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter your task" spellcheck="false" [(ngModel)]="title">
+      <button class="btn btn-primary" (click)="addTask()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+    <ul class="list-group mt-5">
+      <app-task-item  *ngFor="let task of tasks" [task]="task"></app-task-item>
+    </ul>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+<li class="list-group-item">
+  <div class="d-flex" *ngIf="!isEditing; else editElement">
+    <span>{{ data.title }}</span>
+    <button class="btn btn-danger btn-sm ms-auto me-2" (click)="deleteTask()">
+      <i class="fa-solid fa-trash-can"></i>
+    </button>
+    <!-- Button Edit -->
+    <button class="btn btn-info btn-sm" (click)="isEditing = true">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+  </div>
+</li>
+
+<li class="list-group-item">
+  <ng-template #editElement>
+    <div class="input-group">
+      <input [(ngModel)]="data.title" class="form-control">
+      <button class="btn btn-danger btn-sm ms-auto me-2" (click)="editTask()">
+        <i class="fa-solid fa-circle-check"></i>
+      </button>
+      <!-- Button Edit -->
+      <button class="btn btn-info btn-sm" (click)="isEditing = false">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+  </ng-template>
+</li>
